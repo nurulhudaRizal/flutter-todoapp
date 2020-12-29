@@ -73,11 +73,47 @@ void _onAddButtonModalPress(context) {
                 topLeft: Radius.circular(20), topRight: Radius.circular(20)),
           ),
           child: Wrap(
+            runSpacing: 15,
             children: [
               Center(
                   child: Text("Add New Task",
                       style: TextStyle(
                           fontSize: 20, fontWeight: FontWeight.bold))),
+              TextField(
+                decoration: InputDecoration(
+                    labelText: "Task Title",
+                    hintText: "Task Title",
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10))),
+              ),
+              TextField(
+                maxLines: 3,
+                decoration: InputDecoration(
+                    labelText: "Task Description",
+                    hintText: "Task Description",
+                    alignLabelWithHint: true,
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10))),
+              ),
+              Container(
+                decoration: BoxDecoration(
+                    border: Border.all(color: Colors.black38),
+                    borderRadius: BorderRadius.circular(10)),
+                child: ListTile(
+                  title: Text("Date: 31/12/2020"),
+                  trailing: Icon(Icons.date_range),
+                ),
+              ),
+              Container(
+                decoration: BoxDecoration(
+                    border: Border.all(color: Colors.black38),
+                    borderRadius: BorderRadius.circular(10)),
+                child: ListTile(
+                  title: Text("Time: 18:30"),
+                  trailing: Icon(Icons.access_time_outlined),
+                ),
+              ),
+              Center(child: RaisedButton(onPressed: () {}, child: Text("Add"))),
             ],
           ),
         );
